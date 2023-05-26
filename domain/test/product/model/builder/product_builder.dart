@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:domain/src/product/model/product.dart';
 import 'package:domain/src/product/model/seller.dart';
 
@@ -58,4 +60,19 @@ class ProductBuilder {
     currencyId: _currencyId,
     seller: _seller
   );
+
+  List<Product> buildProductList(int quantity) {
+    final products = <Product>[];
+    final random = Random();
+
+    for (var i = 0; i < quantity; i++) {
+      final randomId = random.toString();
+      final randomPrice = random.nextInt(2000000);
+
+      final product = withId(randomId).withPrice(randomPrice).build();
+      products.add(product);
+    }
+
+    return products;
+  }
 }
