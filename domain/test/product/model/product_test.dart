@@ -1,6 +1,6 @@
 import 'package:domain/src/product/exception/negative_param_exception.dart';
 import 'package:domain/src/product/model/product.dart';
-import 'package:domain/src/shared/exception/empty_param_exception.dart';
+import 'package:domain/src/product/exception/empty_param_exception.dart';
 import 'package:test/test.dart';
 
 import 'builder/product_builder.dart';
