@@ -3,4 +3,6 @@
 /// More dartdocs go here.
 library domain;
 
-// TODO: Export any libraries intended for clients of this package.
+export 'package:domain/src/product/repository/product_repository.dart' show ProductRepository;
+export 'package:domain/src/product/model/product.dart' show Product;
+export 'package:domain/src/product/model/seller.dart' show Seller;
