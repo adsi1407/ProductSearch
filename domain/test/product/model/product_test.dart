@@ -41,12 +41,32 @@ void main() {
       expect(() => ProductBuilder().withPrice(price).build(), throwsA(isA<NegativeParamException>()));
     });
 
+    test("create product with negative price -> throws NegativeParamException with specific message",() {
+      //Arrange
+      const price = -1;
+      const exceptionMessage = "price cannot be negative.";
+
+      //Act - Assert
+      expect(() => ProductBuilder().withPrice(price).build(),
+        throwsA(predicate((e) => e is NegativeParamException && e.message == exceptionMessage)));
+    });
+
     test("create product with empty currencyId -> throws EmptyParamException",() {
       //Arrange
       const currencyId = "";
 
       //Act - Assert
       expect(() => ProductBuilder().withCurrencyId(currencyId).build(), throwsA(isA<EmptyParamException>()));
+    });
+
+    test("create product with empty currencyId -> throws EmptyParamException with specific message",() {
+      //Arrange
+      const currencyId = "";
+      const exceptionMessage = "currencyId cannot be empty.";
+
+      //Act - Assert
+      expect(() => ProductBuilder().withCurrencyId(currencyId).build(),
+        throwsA(predicate((e) => e is EmptyParamException && e.message == exceptionMessage)));
     });
 
     test('create product with valid parameters -> instance of Product', () {
