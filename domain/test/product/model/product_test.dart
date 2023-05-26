@@ -48,7 +48,7 @@ void main() {
 
       //Act - Assert
       expect(() => ProductBuilder().withPrice(price).build(),
-        throwsA(predicate((e) => e is NegativeParamException && e.message == exceptionMessage)));
+        throwsA(predicate((e) => e is NegativeParamException && e.toString() == exceptionMessage)));
     });
 
     test("create product with empty currencyId -> throws EmptyParamException",() {
@@ -66,7 +66,7 @@ void main() {
 
       //Act - Assert
       expect(() => ProductBuilder().withCurrencyId(currencyId).build(),
-        throwsA(predicate((e) => e is EmptyParamException && e.message == exceptionMessage)));
+        throwsA(predicate((e) => e is EmptyParamException && e.toString() == exceptionMessage)));
     });
 
     test('create product with valid parameters -> instance of Product', () {
