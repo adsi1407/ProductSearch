@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:presentation/screens/bloc/home_bloc.dart';
+import 'package:presentation/screens/bloc/product_bloc.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -15,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final bloc = context.read<HomeBloc>();
+    final bloc = context.read<ProductBloc>();
 
     return Scaffold(
       appBar: AppBar(
@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Center(
         child: SingleChildScrollView(
-          child: BlocConsumer<HomeBloc, HomeState>(
+          child: BlocConsumer<ProductBloc, ProductState>(
             bloc: bloc,
             builder: (context, state) {
               return Stack(
@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
               );
             },
             listener: (context, state) {
-              if(state is HomeError) {
+              if(state is ProductError) {
                 ScaffoldMessenger.of(context)
                   .showSnackBar(SnackBar(content: Text(state.message)));
               }
