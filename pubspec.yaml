@@ -1,4 +1,4 @@
-name: product_search
+name: presentation
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -34,7 +34,9 @@ dependencies:
     path: ./domain
   infrastructure:
     path: ./infrastructure
-
+    
+  get_it: ^7.2.0
+  injectable: ^2.1.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -51,6 +53,8 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
   test_cov_console: ^0.2.2
+  injectable_generator: ^2.1.4
+  build_runner: ^2.3.3
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

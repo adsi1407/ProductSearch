@@ -4,9 +4,11 @@ import 'package:domain/domain.dart';
 import 'package:infrastructure/src/product/anticorruption/product_translator.dart';
 import 'package:infrastructure/src/product/http_client/dto/search_result.dart';
 import 'package:infrastructure/src/shared/http_client/http_client.dart';
+import 'package:injectable/injectable.dart';
 
-class ProducthttpRepository implements ProductRepository {
-  ProducthttpRepository() {
+@Injectable(as: ProductRepository)
+class ProductHttpRepository implements ProductRepository {
+  ProductHttpRepository() {
     _httpClient = HttpClient();
   }
 
