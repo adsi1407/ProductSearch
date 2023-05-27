@@ -9,26 +9,26 @@ part 'home_state.dart';
 
 @injectable
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  HomeBloc({
-    required ProductService productService,
-    @factoryParam required String searchText
-  })  : _productService = productService,
+  HomeBloc({required ProductService productService})
+      : _productService = productService,
         super(HomeLoading()) {
-    on<GetProducts>((event, emit) async {
-      emit(HomeLoading());
-      try {
-        final result = await _productService.getProductsBySearchText(searchText);
-        emit(HomeSuccess(products: result));
-      } on BusinessException catch (e) {
-        emit(HomeError(e.toString()));
-      } catch (e) {
-        emit(const HomeError(_technicalExceptionMessage));
-      }
-    });
+    on<GetProducts>(_searchProduct);
   }
 
   final ProductService _productService;
   static const String _technicalExceptionMessage = "Sorry! There was an error.";
+
+  Future<void> _searchProduct(GetProducts event, Emitter<HomeState> emit) async {
+    emit(HomeLoading());
+    try {
+      final result = await _productService.getProductsBySearchText(event.searchText);
+      emit(HomeSuccess(products: result));
+    } on BusinessException catch (e) {
+      emit(HomeError(e.message));
+    } catch (e) {
+      emit(const HomeError(_technicalExceptionMessage));
+    }
+  }
 
   @override
   Future<void> close() {
