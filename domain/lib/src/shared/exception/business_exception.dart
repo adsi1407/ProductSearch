@@ -1,0 +1,1 @@
+abstract class BusinessException implements Exception {}
