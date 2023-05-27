@@ -24,6 +24,7 @@ class Seller {
 	final bool carDealer;
   @JsonKey(name: 'real_estate_agency')
 	final bool realEstateAgency;
+  @JsonKey(name: '_')
 	final bool empty;
   @JsonKey(name: 'registration_date')
 	final String registrationDate;

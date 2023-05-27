@@ -26,8 +26,8 @@ class Product {
 		// this.soldQuantity,
 		// this.availableQuantity,
 		// this.officialStoreId,
-		// this.useThumbnailId,
-		// this.acceptsMercadopago,
+		required this.useThumbnailId,
+		required this.acceptsMercadopago,
 		// this.tags,
 		// this.shipping,
 		// this.stopTime,
@@ -37,7 +37,7 @@ class Product {
 		// this.attributes,
 		// this.installments,
 		// this.winnerItemId,
-		// this.catalogListing,
+	  required this.catalogListing,
 		// this.discounts,
 		// this.promotions,
 		// this.inventoryId,
@@ -64,8 +64,10 @@ class Product {
 	// int soldQuantity;
 	// int availableQuantity;
 	// dynamic officialStoreId;
-	// bool useThumbnailId;
-	// bool acceptsMercadopago;
+  @JsonKey(name: 'use_thumbnail_id')
+	final bool useThumbnailId;
+  @JsonKey(name: 'accepts_mercadopago')
+	final bool acceptsMercadopago;
 	// List<String> tags;
 	// Shipping shipping;
 	// String stopTime;
@@ -75,7 +77,8 @@ class Product {
 	// List<Attribute> attributes;
 	// Installments installments;
 	// dynamic winnerItemId;
-	// bool catalogListing;
+  @JsonKey(name: 'catalog_listing', defaultValue: false)
+	final bool catalogListing;
 	// dynamic discounts;
 	// List<dynamic> promotions;
 	// dynamic inventoryId;
