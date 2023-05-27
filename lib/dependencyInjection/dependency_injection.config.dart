@@ -9,10 +9,12 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:domain/domain.module.dart' as _i4;
+import 'package:domain/domain.dart' as _i4;
+import 'package:domain/domain.module.dart' as _i6;
 import 'package:get_it/get_it.dart' as _i1;
-import 'package:infrastructure/infrastructure.module.dart' as _i3;
+import 'package:infrastructure/infrastructure.module.dart' as _i5;
 import 'package:injectable/injectable.dart' as _i2;
+import 'package:presentation/screens/bloc/home_bloc.dart' as _i3;
 
 extension GetItInjectableX on _i1.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
@@ -25,8 +27,10 @@ extension GetItInjectableX on _i1.GetIt {
       environment,
       environmentFilter,
     );
-    await _i3.InfrastructurePackageModule().init(gh);
-    await _i4.DomainPackageModule().init(gh);
+    gh.factory<_i3.HomeBloc>(
+        () => _i3.HomeBloc(productService: gh<_i4.ProductService>()));
+    await _i5.InfrastructurePackageModule().init(gh);
+    await _i6.DomainPackageModule().init(gh);
     return this;
   }
 }
