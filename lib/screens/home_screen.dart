@@ -13,11 +13,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final _textCrlProductSearch = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    final bloc = context.read<ProductBloc>();
+    final productBloc = context.read<ProductBloc>();
 
     return Scaffold(
       appBar: AppBar(
@@ -36,12 +35,28 @@ class _HomeScreenState extends State<HomeScreen> {
           onTap: () {
             showSearch(
               context: context,
-              delegate: ProductSearchDelegate(productBloc: bloc)
+              delegate: ProductSearchDelegate(productBloc: productBloc)
             );
           },
         ),
       ),
-      body: Container()
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const <Widget>[
+            Icon(
+              Icons.search,
+              size: 100,
+              color: Colors.grey,
+            ),
+            SizedBox(height: 20),
+            Text(
+              'Búsqueda de productos',
+              style: TextStyle(fontSize: 18, color: Colors.grey),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
