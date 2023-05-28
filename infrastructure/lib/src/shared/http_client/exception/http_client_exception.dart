@@ -4,5 +4,5 @@ class HttpClientException extends TechnicalException {
   HttpClientException() : super(_httpclientExceptionMessage);
 
   static const _httpclientExceptionMessage =
-      'There was an error when trying to connect to products service, please try again later.';
+      'Hay un error cuando se intenta conectar al servicio web. Por favor intente de nuevo.';
 }

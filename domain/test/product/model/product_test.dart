@@ -44,7 +44,7 @@ void main() {
     test("create product with negative price -> throws NegativeParamException with specific message",() {
       //Arrange
       const price = -1;
-      const exceptionMessage = "price cannot be negative.";
+      const exceptionMessage = "El parámetro price no puede ser negativo.";
 
       //Act - Assert
       expect(() => ProductBuilder().withPrice(price).build(),
@@ -62,7 +62,7 @@ void main() {
     test("create product with empty currencyId -> throws EmptyParamException with specific message",() {
       //Arrange
       const currencyId = "";
-      const exceptionMessage = "currencyId cannot be empty.";
+      const exceptionMessage = "El parámetro currencyId no puede ser vacío.";
 
       //Act - Assert
       expect(() => ProductBuilder().withCurrencyId(currencyId).build(),

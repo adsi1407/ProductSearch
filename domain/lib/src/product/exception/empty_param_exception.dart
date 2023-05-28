@@ -2,7 +2,7 @@ import 'package:domain/src/shared/exception/business_exception.dart';
 
 class EmptyParamException implements BusinessException {
   EmptyParamException({required String param}) {
-    message = '$param cannot be empty.';
+    message = 'El parámetro $param no puede ser vacío.';
   }
 
   late final String message;

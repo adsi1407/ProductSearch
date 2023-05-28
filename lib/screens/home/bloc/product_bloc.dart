@@ -16,7 +16,7 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
   }
 
   final ProductService _productService;
-  static const String _technicalExceptionMessage = "Sorry! There was an error";
+  static const String _technicalExceptionMessage = "¡Disculpa! Hubo un error. Por favor intenta de nuevo.";
 
   Future<void> _searchProduct(GetProducts event, Emitter<ProductState> emit) async {
     emit(ProductLoading());
