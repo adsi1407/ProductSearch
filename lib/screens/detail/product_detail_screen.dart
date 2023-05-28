@@ -1,5 +1,6 @@
 import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 import 'package:presentation/shared/theme.dart';
 
@@ -14,30 +15,38 @@ class ProducDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Product"),
+        title: Text(AppLocalizations.of(context).product_detail_screen_product),
         actions: [
           IconButton(
             icon: const Icon(Icons.favorite_outline),
-            tooltip: 'Favorites',
+            tooltip: AppLocalizations.of(context).product_detail_screen_favorites,
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Added to favorites')),);
+                SnackBar(content: Text(
+                    AppLocalizations.of(context).product_detail_screen_added_to_favorites,
+                  ),
+                ),
+              );
             },
           ),
           IconButton(
             icon: const Icon(Icons.search),
-            tooltip: 'Search',
+            tooltip: AppLocalizations.of(context).product_detail_screen_search,
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Search')),);
+                SnackBar(content: Text(AppLocalizations.of(context).product_detail_screen_search)),);
             },
           ),
           IconButton(
             icon: const Icon(Icons.shopping_cart_outlined),
-            tooltip: 'Add to cart',
+            tooltip: AppLocalizations.of(context).product_detail_screen_add_to_cart,
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Added to cart')),);
+                SnackBar(content: Text(
+                    AppLocalizations.of(context).product_detail_screen_added_to_cart,
+                  ),
+                ),
+              );
             },
           ),
         ],
@@ -74,7 +83,7 @@ class ProducDetailScreen extends StatelessWidget {
                 height: 20,
                 color: ProductColors.backgroundColor,
               ),
-              Text('Vendido por ${product.seller.nickname}',
+              Text('${AppLocalizations.of(context).product_detail_screen_sold_by} ${product.seller.nickname}',
                 style: const TextStyle(
                   color: ProductColors.secondaryColor,
                 ),
@@ -95,7 +104,7 @@ class ProducDetailScreen extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {},
-                  child: const Text('Comprar ahora'),
+                  child: Text(AppLocalizations.of(context).product_detail_screen_buy_now),
                 ),
               ),
               SizedBox(
@@ -110,7 +119,7 @@ class ProducDetailScreen extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {},
-                  child: const Text('Agregar al carrito'),
+                  child: Text(AppLocalizations.of(context).product_detail_screen_add_to_cart),
                 ),
               )
             ],

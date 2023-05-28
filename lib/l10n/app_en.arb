@@ -1,0 +1,13 @@
+{
+    "home_screen_search_in_mercado_libre": "Search in Mercado Libre",
+    "home_screen_search_products": "Product search",
+    "product_bloc_technical_exception_message": "Sorry! There was an error.",
+    "product_detail_screen_product": "Product",
+    "product_detail_screen_favorites": "Favorites",
+    "product_detail_screen_added_to_favorites": "Added to favorites",
+    "product_detail_screen_search": "Search",
+    "product_detail_screen_add_to_cart": "Add to cart",
+    "product_detail_screen_added_to_cart": "Added to cart",
+    "product_detail_screen_sold_by": "Sold by",
+    "product_detail_screen_buy_now": "Buy Now"
+}

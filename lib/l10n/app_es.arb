@@ -1,0 +1,13 @@
+{
+    "home_screen_search_in_mercado_libre": "Buscar en Mercado Libre",
+    "home_screen_search_products": "Búsqueda de productos",
+    "product_bloc_technical_exception_message": "¡Lo sentimos! Ha habido un error.",
+    "product_detail_screen_product": "Producto",
+    "product_detail_screen_favorites": "Favoritos",
+    "product_detail_screen_added_to_favorites": "Añadido a favoritos",
+    "product_detail_screen_search": "Buscar",
+    "product_detail_screen_add_to_cart": "añadir al carrito",
+    "product_detail_screen_added_to_cart": "Añadido al carrito",
+    "product_detail_screen_sold_by": "Vendido por",
+    "product_detail_screen_buy_now": "Comprar ahora"
+}
