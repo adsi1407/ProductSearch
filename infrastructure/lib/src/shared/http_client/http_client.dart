@@ -14,12 +14,7 @@ class HttpClient {
   static const _httpStatusCodeOk = 200;
 
   Future<String> getRequest(Uri url) async {
-    Response response;
-    try {
-      response = await _client.get(url).timeout(_timeOut);
-    } finally {
-      _client.close();
-    }
+    final response = await _client.get(url).timeout(_timeOut);
     return response.statusCode == _httpStatusCodeOk
         ? response.body
         : throw HttpClientException();
