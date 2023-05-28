@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:presentation/screens/bloc/product_bloc.dart';
-import 'package:presentation/screens/delegates/product_search_delegate.dart';
+import 'package:presentation/screens/home/bloc/product_bloc.dart';
+import 'package:presentation/screens/home/delegates/product_search_delegate.dart';
 import 'package:presentation/shared/theme.dart';
 
 class HomeScreen extends StatefulWidget {

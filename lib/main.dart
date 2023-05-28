@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:presentation/dependencyInjection/dependency_injection.dart';
-import 'package:presentation/screens/home_screen.dart';
+import 'package:presentation/screens/home/home_screen.dart';
 import 'package:presentation/shared/routes.dart';
 import 'package:presentation/shared/theme.dart';
 

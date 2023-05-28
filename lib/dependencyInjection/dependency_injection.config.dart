@@ -14,7 +14,7 @@ import 'package:domain/domain.module.dart' as _i6;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:infrastructure/infrastructure.module.dart' as _i5;
 import 'package:injectable/injectable.dart' as _i2;
-import 'package:presentation/screens/bloc/product_bloc.dart' as _i3;
+import 'package:presentation/screens/home/bloc/product_bloc.dart' as _i3;
 
 extension GetItInjectableX on _i1.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt

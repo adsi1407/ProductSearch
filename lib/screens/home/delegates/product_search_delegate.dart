@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:presentation/screens/bloc/product_bloc.dart';
+import 'package:presentation/screens/detail/product_detail_screen.dart';
+import 'package:presentation/screens/home/bloc/product_bloc.dart';
 
 class ProductSearchDelegate extends SearchDelegate {
   ProductSearchDelegate({required this.productBloc});
@@ -50,6 +51,12 @@ class ProductSearchDelegate extends SearchDelegate {
             itemBuilder: (context, index) {
               return ListTile(
                 title: Text(state.products[index].title),
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    ProducDetailScreen.routeName,
+                  );
+                },
               );
             }
           );
