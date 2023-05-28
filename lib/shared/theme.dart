@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class ProductColors {
   static const int _primaryColor = 0xFFFFE600;
+  static const int secondaryColor = 0xFF3483FA;
   static const primaryColor = MaterialColor(_primaryColor, {
     50: Color(0xFFFFF170),
     100: Color(0xFFFFEF5C),
@@ -21,7 +22,7 @@ final ligthTheme = ThemeData(
   scaffoldBackgroundColor: ProductColors.backgroundColor,
   colorScheme: ColorScheme.fromSwatch(primarySwatch: ProductColors.primaryColor).copyWith(
     primary: ProductColors.primaryColor,
-    secondary: const Color(0xFF3483FA),
+    secondary: const Color(ProductColors.secondaryColor),
     tertiary: const Color(0xFF04A54F)
   )
 );

@@ -1,11 +1,14 @@
 import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:presentation/shared/theme.dart';
 
 class ProducDetailScreen extends StatelessWidget {
-  const ProducDetailScreen({super.key, required this.product});
+  ProducDetailScreen({super.key, required this.product});
   static const routeName = 'product-detail-screen';
 
   final Product product;
+  final _priceFormat = NumberFormat("\$ #,##0", "es_CO");
 
   @override
   Widget build(BuildContext context) {
@@ -40,13 +43,57 @@ class ProducDetailScreen extends StatelessWidget {
         ],
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Text(product.title),
-            Image.network(product.thumbnail),
-            Text(product.price.toString())
-          ],
-        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(product.title),
+              const Divider(
+                height: 20,
+                color: ProductColors.backgroundColor
+              ),
+              Center(
+                child: Image.network(
+                  product.thumbnail,
+                  width: 250,
+                  height: 250,
+                  fit: BoxFit.cover,
+                )
+              ),
+              const Divider(
+                height: 20,
+                color: ProductColors.backgroundColor
+              ),
+              Text(_priceFormat.format(product.price),
+                style: const TextStyle(
+                  fontSize: 25
+                ),
+              ),
+              const Divider(
+                height: 20,
+                color: ProductColors.backgroundColor
+              ),
+              Text("Vendido por ${product.seller.nickname}",
+                style: const TextStyle(
+                  color: Color(ProductColors.secondaryColor)
+                ),
+              ),
+              const Divider(
+                height: 20,
+                color: ProductColors.backgroundColor
+              ),
+              ElevatedButton(
+                child: const Text("Comprar ahora"),
+                onPressed: () {}
+              ),
+              ElevatedButton(
+                child: const Text("Agregar al carrito"),
+                onPressed: () {}
+              )
+            ],
+          )
+        )
       ),
     );
   }
