@@ -86,7 +86,6 @@ class ProducDetailScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  child: const Text("Comprar ahora"),
                   style: ButtonStyle(
                     backgroundColor: MaterialStateColor.resolveWith(
                       (states) => ProductColors.secondaryColor
@@ -95,13 +94,13 @@ class ProducDetailScreen extends StatelessWidget {
                       (states) => ProductColors.backgroundColor
                     )
                   ),
-                  onPressed: () {}
+                  onPressed: () {},
+                  child: const Text("Comprar ahora"),
                 ),
               ),
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  child: const Text("Agregar al carrito"),
                   style: ButtonStyle(
                     backgroundColor: MaterialStateColor.resolveWith(
                       (states) => ProductColors.secondaryColor.shade50
@@ -110,7 +109,8 @@ class ProducDetailScreen extends StatelessWidget {
                       (states) => ProductColors.secondaryColor
                     )
                   ),
-                  onPressed: () {}
+                  onPressed: () {},
+                  child: const Text("Agregar al carrito"),
                 ),
               )
             ],
