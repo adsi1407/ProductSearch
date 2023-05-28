@@ -1,3 +1,4 @@
+import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:presentation/dependencyInjection/dependency_injection.dart';
@@ -11,6 +12,29 @@ class AppRouter {
           create: (_) => getIt<ProductBloc>(),
           child: const HomeScreen(),
         ),
-    ProducDetailScreen.routeName: (context) => const ProducDetailScreen()
+  };
+
+  static const int _transitionDurationInMillis = 550;
+
+  static RouteFactory onGenerateRoute = (RouteSettings settings) {
+    final routeName = settings.name;
+
+    if (routeName == ProducDetailScreen.routeName) {
+      const transitionDuration =
+          Duration(milliseconds: _transitionDurationInMillis);
+      final arguments = settings.arguments;
+
+      return PageRouteBuilder(
+        transitionDuration: transitionDuration,
+        reverseTransitionDuration: transitionDuration,
+        pageBuilder: (_, animation, ___) {
+          return FadeTransition(
+            opacity: animation,
+            child: ProducDetailScreen(product: arguments as Product)
+          );
+        },
+      );
+    }
+    return null;
   };
 }

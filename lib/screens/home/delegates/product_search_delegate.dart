@@ -71,6 +71,7 @@ class ProductSearchDelegate extends SearchDelegate {
                   Navigator.pushNamed(
                     context,
                     ProducDetailScreen.routeName,
+                    arguments: state.products[index]
                   );
                 },
               );

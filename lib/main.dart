@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ligthTheme,
       initialRoute: HomeScreen.routeName,
       routes: AppRouter.routes,
+      onGenerateRoute: AppRouter.onGenerateRoute,
     );
   }
 }
