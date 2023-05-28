@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:presentation/screens/bloc/product_bloc.dart';
+import 'package:presentation/screens/delegates/product_search_delegate.dart';
+import 'package:presentation/shared/theme.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -19,40 +21,27 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Search Product'),
-      ),
-      body: Center(
-        child: SingleChildScrollView(
-          child: BlocConsumer<ProductBloc, ProductState>(
-            bloc: bloc,
-            builder: (context, state) {
-              return Stack(
-                children: [
-                  Column(
-                    children: [
-                      TextFormField(
-                        controller: _textCrlProductSearch,
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          bloc.add(GetProducts(searchText: _textCrlProductSearch.text));
-                        },
-                        child: const Text("Buscar")
-                      )
-                    ],
-                  ),
-                ],
-              );
-            },
-            listener: (context, state) {
-              if(state is ProductError) {
-                ScaffoldMessenger.of(context)
-                  .showSnackBar(SnackBar(content: Text(state.message)));
-              }
-            },
-          )
+        title: TextField(
+          readOnly: true,
+          decoration: InputDecoration(
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(50)
+            ),
+            filled: true,
+            fillColor: ProductColors.backgroundColor,
+            hintText: "Buscar en Mercado Libre",
+            prefixIcon: const Icon(Icons.search_outlined),
+            contentPadding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 10.0)
+          ),
+          onTap: () {
+            showSearch(
+              context: context,
+              delegate: ProductSearchDelegate(productBloc: bloc)
+            );
+          },
         ),
       ),
+      body: Container()
     );
   }
 }
