@@ -24,18 +24,18 @@ class _HomeScreenState extends State<HomeScreen> {
           readOnly: true,
           decoration: InputDecoration(
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(50)
+              borderRadius: BorderRadius.circular(50),
             ),
             filled: true,
             fillColor: ProductColors.backgroundColor,
             hintText: "Buscar en Mercado Libre",
             prefixIcon: const Icon(Icons.search_outlined),
-            contentPadding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 10.0)
+            contentPadding: const EdgeInsets.symmetric(horizontal: 10),
           ),
           onTap: () {
             showSearch(
               context: context,
-              delegate: ProductSearchDelegate(productBloc: productBloc)
+              delegate: ProductSearchDelegate(productBloc: productBloc),
             );
           },
         ),

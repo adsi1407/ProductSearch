@@ -30,7 +30,7 @@ class AppRouter {
         pageBuilder: (_, animation, ___) {
           return FadeTransition(
             opacity: animation,
-            child: ProducDetailScreen(product: arguments as Product)
+            child: ProducDetailScreen(product: arguments as Product),
           );
         },
       );

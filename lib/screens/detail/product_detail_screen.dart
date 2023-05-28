@@ -4,11 +4,11 @@ import 'package:intl/intl.dart';
 import 'package:presentation/shared/theme.dart';
 
 class ProducDetailScreen extends StatelessWidget {
-  ProducDetailScreen({super.key, required this.product});
+  ProducDetailScreen({required this.product, super.key});
   static const routeName = 'product-detail-screen';
 
   final Product product;
-  final _priceFormat = NumberFormat("\$ #,##0", "es_CO");
+  final _priceFormat = NumberFormat(r'$ #,##0', 'es_CO');
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class ProducDetailScreen extends StatelessWidget {
             tooltip: 'Favorites',
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Added to favorites')));
+                  const SnackBar(content: Text('Added to favorites')),);
             },
           ),
           IconButton(
@@ -29,7 +29,7 @@ class ProducDetailScreen extends StatelessWidget {
             tooltip: 'Search',
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Search')));
+                  const SnackBar(content: Text('Search')),);
             },
           ),
           IconButton(
@@ -37,7 +37,7 @@ class ProducDetailScreen extends StatelessWidget {
             tooltip: 'Add to cart',
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Added to cart')));
+                  const SnackBar(content: Text('Added to cart')),);
             },
           ),
         ],
@@ -51,7 +51,7 @@ class ProducDetailScreen extends StatelessWidget {
               Text(product.title),
               const Divider(
                 height: 20,
-                color: ProductColors.backgroundColor
+                color: ProductColors.backgroundColor,
               ),
               Center(
                 child: Image.network(
@@ -59,43 +59,43 @@ class ProducDetailScreen extends StatelessWidget {
                   width: 250,
                   height: 250,
                   fit: BoxFit.cover,
-                )
+                ),
               ),
               const Divider(
                 height: 20,
-                color: ProductColors.backgroundColor
+                color: ProductColors.backgroundColor,
               ),
               Text(_priceFormat.format(product.price),
                 style: const TextStyle(
-                  fontSize: 25
+                  fontSize: 25,
                 ),
               ),
               const Divider(
                 height: 20,
-                color: ProductColors.backgroundColor
+                color: ProductColors.backgroundColor,
               ),
-              Text("Vendido por ${product.seller.nickname}",
+              Text('Vendido por ${product.seller.nickname}',
                 style: const TextStyle(
-                  color: ProductColors.secondaryColor
+                  color: ProductColors.secondaryColor,
                 ),
               ),
               const Divider(
                 height: 20,
-                color: ProductColors.backgroundColor
+                color: ProductColors.backgroundColor,
               ),
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
                   style: ButtonStyle(
                     backgroundColor: MaterialStateColor.resolveWith(
-                      (states) => ProductColors.secondaryColor
+                      (states) => ProductColors.secondaryColor,
                     ),
                     foregroundColor: MaterialStateColor.resolveWith(
-                      (states) => ProductColors.backgroundColor
-                    )
+                      (states) => ProductColors.backgroundColor,
+                    ),
                   ),
                   onPressed: () {},
-                  child: const Text("Comprar ahora"),
+                  child: const Text('Comprar ahora'),
                 ),
               ),
               SizedBox(
@@ -103,19 +103,19 @@ class ProducDetailScreen extends StatelessWidget {
                 child: ElevatedButton(
                   style: ButtonStyle(
                     backgroundColor: MaterialStateColor.resolveWith(
-                      (states) => ProductColors.secondaryColor.shade50
+                      (states) => ProductColors.secondaryColor.shade50,
                     ),
                     foregroundColor: MaterialStateColor.resolveWith(
-                      (states) => ProductColors.secondaryColor
-                    )
+                      (states) => ProductColors.secondaryColor,
+                    ),
                   ),
                   onPressed: () {},
-                  child: const Text("Agregar al carrito"),
+                  child: const Text('Agregar al carrito'),
                 ),
               )
             ],
-          )
-        )
+          ),
+        ),
       ),
     );
   }

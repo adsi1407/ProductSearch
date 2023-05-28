@@ -36,6 +36,6 @@ final ligthTheme = ThemeData(
   colorScheme: ColorScheme.fromSwatch(primarySwatch: ProductColors.primaryColor).copyWith(
     primary: ProductColors.primaryColor,
     secondary: ProductColors.secondaryColor,
-    tertiary: const Color(0xFF04A54F)
-  )
+    tertiary: const Color(0xFF04A54F),
+  ),
 );

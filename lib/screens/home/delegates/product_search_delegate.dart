@@ -16,16 +16,16 @@ class ProductSearchDelegate extends SearchDelegate {
         if (query.isEmpty) {
           close(context, null);
         } else {
-          query = "";
+          query = '';
         }
-      }
+      },
     )
   ];
 
   @override
   Widget? buildLeading(BuildContext context) => IconButton(
     icon: const Icon(Icons.arrow_back),
-    onPressed: () => close(context, null)
+    onPressed: () => close(context, null),
   );
 
   @override
@@ -71,11 +71,11 @@ class ProductSearchDelegate extends SearchDelegate {
                   Navigator.pushNamed(
                     context,
                     ProducDetailScreen.routeName,
-                    arguments: state.products[index]
+                    arguments: state.products[index],
                   );
                 },
               );
-            }
+            },
           );
         }
         return const Scaffold();
