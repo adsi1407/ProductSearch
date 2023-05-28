@@ -76,7 +76,7 @@ class ProducDetailScreen extends StatelessWidget {
               ),
               Text("Vendido por ${product.seller.nickname}",
                 style: const TextStyle(
-                  color: Color(ProductColors.secondaryColor)
+                  color: ProductColors.secondaryColor
                 ),
               ),
               const Divider(
@@ -87,6 +87,14 @@ class ProducDetailScreen extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   child: const Text("Comprar ahora"),
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateColor.resolveWith(
+                      (states) => ProductColors.secondaryColor
+                    ),
+                    foregroundColor: MaterialStateColor.resolveWith(
+                      (states) => ProductColors.backgroundColor
+                    )
+                  ),
                   onPressed: () {}
                 ),
               ),
@@ -94,6 +102,14 @@ class ProducDetailScreen extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   child: const Text("Agregar al carrito"),
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateColor.resolveWith(
+                      (states) => ProductColors.secondaryColor.shade50
+                    ),
+                    foregroundColor: MaterialStateColor.resolveWith(
+                      (states) => ProductColors.secondaryColor
+                    )
+                  ),
                   onPressed: () {}
                 ),
               )
