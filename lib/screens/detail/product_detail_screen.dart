@@ -83,13 +83,19 @@ class ProducDetailScreen extends StatelessWidget {
                 height: 20,
                 color: ProductColors.backgroundColor
               ),
-              ElevatedButton(
-                child: const Text("Comprar ahora"),
-                onPressed: () {}
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  child: const Text("Comprar ahora"),
+                  onPressed: () {}
+                ),
               ),
-              ElevatedButton(
-                child: const Text("Agregar al carrito"),
-                onPressed: () {}
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  child: const Text("Agregar al carrito"),
+                  onPressed: () {}
+                ),
               )
             ],
           )
