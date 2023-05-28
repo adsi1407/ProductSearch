@@ -42,7 +42,23 @@ class ProductSearchDelegate extends SearchDelegate {
         }
         if(state is ProductError) {
           return Center(
-            child: Text(state.message)
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  const Icon(
+                    Icons.error,
+                    size: 100,
+                    color: Colors.grey,
+                  ),
+                  const SizedBox(height: 20),
+                  Text(
+                    state.message,
+                    style: const TextStyle(fontSize: 18, color: Colors.grey),
+                  ),
+                ],
+              ),
+            ),
           );
         }
         if (state is ProductSuccess) {
