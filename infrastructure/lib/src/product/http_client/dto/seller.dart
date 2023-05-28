@@ -14,9 +14,9 @@ class Seller {
 		required this.tags,
 		required this.carDealerLogo,
 		required this.permalink,
-		//this.sellerReputation,
-		//this.eshop,
 	});
+
+  factory Seller.fromJson(Map<String, dynamic> json) => _$SellerFromJson(json);
 
   final int id;
 	final String nickname;
@@ -32,8 +32,4 @@ class Seller {
   @JsonKey(name: 'car_dealer_logo')
 	final String carDealerLogo;
 	final String permalink;
-	//final SellerReputation sellerReputation;
-	//final Eshop eshop;
-
-  factory Seller.fromJson(Map<String, dynamic> json) => _$SellerFromJson(json);
 }

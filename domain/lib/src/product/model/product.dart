@@ -1,6 +1,6 @@
+import 'package:domain/src/product/exception/empty_param_exception.dart';
 import 'package:domain/src/product/exception/negative_param_exception.dart';
 import 'package:domain/src/product/model/seller.dart';
-import 'package:domain/src/product/exception/empty_param_exception.dart';
 
 class Product {
   
@@ -10,7 +10,7 @@ class Product {
     required this.thumbnail,
     required this.price,
     required this.currencyId,
-    required this.seller
+    required this.seller,
   }) {
     _validateEmptyParameters();
   }
@@ -31,4 +31,3 @@ class Product {
   }
 
 }
-

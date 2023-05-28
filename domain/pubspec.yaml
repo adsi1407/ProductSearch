@@ -2,7 +2,6 @@ name: domain
 description: A starting point for Dart libraries or applications.
 version: 1.0.0
 publish_to: "none"
-# repository: https://github.com/my_org/my_repo
 
 environment:
   sdk: '>=2.19.3 <3.0.0'

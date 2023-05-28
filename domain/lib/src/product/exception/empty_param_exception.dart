@@ -5,6 +5,7 @@ class EmptyParamException implements BusinessException {
     message = 'El parámetro $param no puede ser vacío.';
   }
 
+  @override
   late final String message;
 
   @override

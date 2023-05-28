@@ -12,11 +12,11 @@ class Paging {
     required this.limit,
   });
 
+  factory Paging.fromJson(Map<String, dynamic> json) => _$PagingFromJson(json);
+
   final int total;
   @JsonKey(name: 'primary_results')
   final int primaryResults;
   final int offset;
   final int limit;
-
-  factory Paging.fromJson(Map<String, dynamic> json) => _$PagingFromJson(json);
 }

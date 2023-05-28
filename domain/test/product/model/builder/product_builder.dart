@@ -7,11 +7,11 @@ import 'seller_builder.dart';
 
 class ProductBuilder {
   ProductBuilder() {
-    _id = "MCO1136067281";
-    _title = "Sony Playstation 4 Slim 500gb Standard Color  Negro Azabache";
-    _thumbnail = "http://http2.mlstatic.com/D_817486-MLA32731749427_112019-I.jpg";
+    _id = 'MCO1136067281';
+    _title = 'Sony Playstation 4 Slim 500gb Standard Color  Negro Azabache';
+    _thumbnail = 'http://http2.mlstatic.com/D_817486-MLA32731749427_112019-I.jpg';
     _price = 1999900;
-    _currencyId = "COP";
+    _currencyId = 'COP';
     _seller = SellerBuilder().build();
   }
 
@@ -58,7 +58,7 @@ class ProductBuilder {
     thumbnail: _thumbnail,
     price: _price,
     currencyId: _currencyId,
-    seller: _seller
+    seller: _seller,
   );
 
   List<Product> buildProductList(int quantity) {

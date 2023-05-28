@@ -1,11 +1,11 @@
-import 'package:domain/src/product/exception/negative_param_exception.dart';
 import 'package:domain/src/product/exception/empty_param_exception.dart';
+import 'package:domain/src/product/exception/negative_param_exception.dart';
 
 class Seller {
   Seller({
     required this.id,
     required this.nickname,
-    required this.permalink
+    required this.permalink,
   }) {
     _validateEmptyParameters();
   }

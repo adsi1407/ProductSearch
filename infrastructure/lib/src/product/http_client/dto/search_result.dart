@@ -12,11 +12,9 @@ class SearchResult {
     required this.query,
     required this.paging,
     required this.products,
-    // this.sort,
-    // this.availableSorts,
-    // this.filters,
-    // this.availableFilters,
   });
+
+  factory SearchResult.fromJson(Map<String, dynamic> json) => _$SearchResultFromJson(json);
 
   @JsonKey(name: 'site_id')
   String siteId;
@@ -26,10 +24,4 @@ class SearchResult {
   Paging paging;
   @JsonKey(name: 'results')
   List<Product> products;
-  // Sort sort;
-  // List<Sort> availableSorts;
-  // List<Filter> filters;
-  // List<AvailableFilter> availableFilters;
-
-  factory SearchResult.fromJson(Map<String, dynamic> json) => _$SearchResultFromJson(json);
 }

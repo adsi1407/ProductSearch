@@ -6,7 +6,7 @@ class SellerTranslator {
     return domain.Seller(
       id: sellerDto.id,
       nickname: sellerDto.nickname,
-      permalink: sellerDto.permalink
+      permalink: sellerDto.permalink,
     );
   }
 }

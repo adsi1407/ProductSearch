@@ -5,6 +5,7 @@ class NegativeParamException implements BusinessException {
     message = 'El parámetro $param no puede ser negativo.';
   }
 
+  @override
   late final String message;
 
   @override

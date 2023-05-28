@@ -15,12 +15,12 @@ class ProductHttpRepository implements ProductRepository {
   late HttpClient _httpClient;
 
   static const _authority = 'api.mercadolibre.com';
-  static const _unencodedPath = "/sites/MCO/search";
-  static const _product_search_query_param = "q";
+  static const _unencodedPath = '/sites/MCO/search';
+  static const _productSearchQueryParam = 'q';
   
   @override
   Future<List<Product>> getProductsBySearchText(String searchText) async {
-    final queryParams = <String, dynamic>{ _product_search_query_param: searchText};
+    final queryParams = <String, dynamic>{ _productSearchQueryParam: searchText};
     final uri = Uri.https(_authority, _unencodedPath, queryParams);
 
     final response = await _httpClient.getRequest(uri);

@@ -11,7 +11,7 @@ class ProductTranslator {
       thumbnail: productDto.thumbnail,
       price: productDto.price,
       currencyId: productDto.currencyId,
-      seller: SellerTranslator.fromDtoToDomain(productDto.seller)
+      seller: SellerTranslator.fromDtoToDomain(productDto.seller),
     );
   }
 }

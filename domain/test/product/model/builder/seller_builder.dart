@@ -3,8 +3,8 @@ import 'package:domain/src/product/model/seller.dart';
 class SellerBuilder {
   SellerBuilder() {
     _id = 783790319;
-    _nickname = "MRBLIS.COM";
-    _permalink = "http://perfil.mercadolibre.com.co/MRBLIS.COM";
+    _nickname = 'MRBLIS.COM';
+    _permalink = 'http://perfil.mercadolibre.com.co/MRBLIS.COM';
   }
 
   late int _id;
@@ -29,6 +29,6 @@ class SellerBuilder {
   Seller build() => Seller(
     id: _id,
     nickname: _nickname,
-    permalink: _permalink
+    permalink: _permalink,
   );
 }
